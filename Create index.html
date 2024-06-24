@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Selectors Cheatsheet</title>
+    <link href="Resources/CSS/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-----------------------------Nav-Bar-------------------------->
+    <nav>
+        <ul>
+            <li><a href="#selectors">Selectors</a></li>
+            <li><a href="#p-class">P-class</a></li>
+            <li><a href="#specificity">Specificity</a></li>
+            <li><a href="#chaining">Chaining & Combinators</a></li>
+            <li><a href="#multi">Multiple Selectors</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>CSS Selectors Cheatsheet</h1>
+        <h4>by Vaclok Prism</h4>
+    </header>
+
+    <main>
+        <!-------------------------Selectors---------------------->
+        <div id="selectors">
+            <h2>Selectors</h2>
+            <p><span class="bold">Selectors</span> are used to select HTML elemets in order to style them with CSS</p>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Description</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>*</td>
+                        <td>Selects all elements</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>Selects HTML elements</td>
+                        <td><span class="code">&lt;p&gt; &lt;h1&gt; &lt;ol&gt;</span></td>
+                        <td><span class="code">>p, h1, ol</span></td>
+                    </tr>
+                    <tr>
+                        <td>Attribute</td>
+                        <td>Selects an element with an attribute</td>
+                        <td><span class="code">href, src, alt</span></td>
+                        <td><span class="code">[href], [src], [alt]</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class</td>
+                        <td>Selects an element with a class attribute</td>
+                        <td><span class="code">class='heading'</span></td>
+                        <td><span class="code">.heading</span></td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>Selects an element with an id attribute</td>
+                        <td><span class="code">id='title'</span></td>
+                        <td><span class="code">#title</span></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <!---------------------Pseudo-classes----------------------->
+        <div id="p-class">
+            <h2>Pseudo-classes</h2>
+            <p>Pseudo-classes are keywords that can be added to any selector. By adding a pseudo-class selectors can be
+                given special states</p>
+            <p>Pseudo-class will always start with a <span class="code">:</span> e.g., <span class="code">:hover</span>
+            </p>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>P-class</th>
+                        <th>Function</th>
+                        <th>CSS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><span class="code">:hover</span></td>
+                        <td>used when a user hovers over an element</td>
+                        <td><span class="code">link:hover</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">:visited</span></td>
+                        <td>Used to style elements that have been visted</td>
+                        <td><span class="code">link:visited</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>These are just two example. There are a lot more <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">p-classes</a>. </p>
+
+            <!--------------------------Specificity--------------------------->
+            <h2 id="specificity">Specificity</h2>
+            <p>Specificity is the order in which the CSS selectors will display.</p>
+            <p>If an element is styled with more than one selector then the more specific selector will take effect</p>
+
+            <img src="Resources/Images/This-is-a-Heading.png"
+                alt="html code of the h1 element with the class heading" />
+            <img src="Resources/Images/CSS-color.png" alt="CSS code with the selectors h1 & .heading. The h1 selectors is set to color: green ,
+            and the .heading selector is set to color: red" />
+
+            <p>In this example the heading would be red since the class selector is more specific that the type selector
+            </p>
+
+            <p>From most specific to least specific is</p>
+            <p>Id,class,& type</p>
+            <p>Attribute and p-class are on the same level of specificity as class</p>
+
+            <p>Id is the most specific selector and will overwrite any oppsoing class or type declartion</p>
+        </div>
+
+        <!--------------------------Chaining------------------------------->
+        <div id="chaining">
+            <h2>Chaining & Combinators</h2>
+
+            <p>You can combine multiple selectors when writing a CSS rule. This is called chaining.
+            <P>An example of chaining typed out in CSS looks like this <span class="code">h1.special.</span> This code
+                would target all <span class="code">&lt;h1&gt;</span>
+                with a class of special</P>
+            Chaining is used to keep CSS code easy to read and less repetitive. Chaining also increses a selector's
+            specificity
+            </p>
+
+            <p> For Example: a selector of <span class="code">p.list</span> would be more specific than a selector of
+                just <span class="code">p</span></p>
+
+            <p>We can also select elements related to other elements using Combinators</p>
+            <p>We can select a Descendant of an element by purring a space in between the elements. eg, <span
+                    class="code">.list li.</span> This will
+                select all the <span class="code">&lt;li&gt;</span>
+                Descendants of the parent with the class of <span class="code">.list</span></p>
+
+            <h3>Types of Combinators</h3>
+
+            <table>
+                <thead>
+                    <th>Selector</th>
+                    <th>Example</th>
+                    <th>Function</th>
+                </thead>
+                <tr>
+                    <td>tag.class</td>
+                    <td><span class="code">p.main</span></td>
+                    <td>Will select all <span class="code">&lt;p&gt;</span> with a class of main</td>
+                </tr>
+                <tr>
+                    <td>.class tag</td>
+                    <td><span class="code">.main p</span></td>
+                    <td>Will only select Descendants of .main with the <span class="code">&lt;p&gt;</span></td>
+                </tr>
+            </table>
+        </div>
+        <!---------------------Multipule Selectors------------------------->
+        <div id="multi">
+            <h2>Multiple Selectors</h2>
+
+            <p>We can also make CSS code more readable by putting multiple selectors in one CSS rule</p>
+
+            <p>This is done by putting commas in between selectors</p>
+            <img src="Resources/Images/Multi-selectors.png" />
+            <p>In this example all <span class="code">&lt;h1&gt;,&lt;h2&gt;,& &lt;h3&gt;</span> text will be red</p>
+        </div>
+
+
+
+
+
+    </main>
+</body>
+
+</html>
