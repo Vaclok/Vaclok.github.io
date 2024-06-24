@@ -1,0 +1,61 @@
+* {
+    text-align: center;
+
+}
+
+header {
+    background-color: seagreen;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+
+}
+
+nav li {
+    color: black;
+    border-style: solid;
+    border-color: peru;
+    background-color: peru;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+nav a:visited {
+    color: black;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+body {
+    background-color: navajowhite;
+}
+
+h2 {
+    background-color: peru;
+}
+
+p {
+    font-size: large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+
+}
+
+table,
+th,
+td {
+    margin: auto;
+    border: 1px solid;
+    font-size: large;
+    background-color: mediumseagreen;
+}
